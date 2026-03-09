@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+.selected {
+    background-color: #388e3c;
+    color: white;
+}
+
+.region {
+    margin-bottom: 40px;
+}
+
+.region h2 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.rounds-container {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: stretch;
+}
+
+.round {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 0;
+    min-width: 160px;
+}
+
+.round h3 {
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.matchup {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ccc;
+    margin-bottom: 8px;
+}
+
+.team {
+    padding: 5px 8px;
+    cursor: pointer;
+    font-size: 13px;
+    border-bottom: 1px solid #eee;
+}
+
+.team:hover {
+    background-color: #d4edda
+}
+
+.team.selected:hover {
+    background-color: #388e3c;
+}
+
+#bracket-container {
+    display: flex;
+    flex-direction: row;
+    gap: 20px
+}
+
+#left-side, #right-side {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    flex: 1;
+}
+
+#center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 150px;
+    flex: 0 0 200px;
+    min-width: 200px;
+}
+
+.right-side-rounds {
+    flex-direction: row-reverse;
+}
+
+#right-side .region {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+#right-side .region h2 {
+    width: 100%;
+    text-align: center;
+}
+
+#right-side .rounds-container {
+    justify-content: flex-end;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#main-title {
+    text-align: center;
+    font-family: 'Anton', sans-serif;
+    font-size: 52px;
+    color: white;
+    letter-spacing: 3px;
+    margin: 0;
+    padding: 16px 0;
+    background: linear-gradient(to right, #c8102e, #003087);
+    width: 100%;
+    font-style: italic;
+    display: block;
+}
+
+#controls {
+    text-align: center;
+    margin: 10px 0 20px 0;
+}
+
+#controls button {
+    margin: 0 10px;
+    padding: 8px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    background-color: #003087;
+    color: white;
+    font-family: 'Anton', sans-serif;
+    letter-spacing: 1px;
+}
+
+#controls button:hover {
+    background-color: #c8102e;
+}
+
+.team-input {
+    width: 100%;
+    padding: 5px 8px;
+    font-size: 13px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+#center-inner {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    justify-content: center;
+}
+
+#center-inner .round_col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    min-width: 180px;
+}
+
+#center-inner .matchup {
+    width: 180px;
+}
+
+#center-inner h3 {
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    white-space: nowrap;
+}
+
+#center-inner .round-col:nth-child(2) .matchup {
+    width: 260px;
+}
+
+#center-inner .round-col:nth-child(2) h3 {
+    font-size: 22px;
+}
+
+#center-inner .round-col:nth-child(2) .team {
+    font-size: 15px;
+    padding: 8px 10px;
+}
+
+#center-inner .round-col:nth-child(2) p {
+    color: #388e3c;
+}
