@@ -1,3 +1,12 @@
+// CHANGE EVERY TIME YOU EDIT FIELD
+const BRACKET_VERSION = "1.0";
+
+const savedVersion = localStorage.getItem('bracketVersion');
+if (savedVersion != BRACKET_VERSION) {
+    localStorage.clear();
+    localStorage.setItem('bracketVersion', BRACKET_VERSION);
+}
+
 const bracket = {
     south: [
         { team1: '1 Florida', team2: '16 Lehigh', winner: null },
