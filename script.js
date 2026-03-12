@@ -7,6 +7,7 @@ if (savedVersion != BRACKET_VERSION) {
     localStorage.setItem('bracketVersion', BRACKET_VERSION);
 }
 
+
 const bracket = {
     south: [
         { team1: '1 Florida', team2: '16 Lehigh', winner: null },
