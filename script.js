@@ -1,5 +1,5 @@
 // CHANGE EVERY TIME YOU EDIT FIELD
-const BRACKET_VERSION = "2.0";
+const BRACKET_VERSION = "3.0";
 
 const savedVersion = localStorage.getItem('bracketVersion');
 if (savedVersion != BRACKET_VERSION) {
@@ -11,45 +11,45 @@ if (savedVersion != BRACKET_VERSION) {
 const bracket = {
     south: [
         { team1: '1 Florida', team2: '16 Lehigh', winner: null },
-        { team1: '8 Miami', team2: '9 TCU', winner: null},
-        { team1: '5 St Johns', team2: '12 South Florida', winner: null },
-        { team1: '4 Purdue', team2: '13 Hofstra', winner: null},
-        { team1: '6 BYU', team2: '11 SMU', winner: null },
+        { team1: '8 Ohio State', team2: '9 Clemson', winner: null},
+        { team1: '5 St Johns', team2: '12 McNeese', winner: null },
+        { team1: '4 Texas Tech', team2: '13 Utah Valley', winner: null},
+        { team1: '6 North Carolina', team2: '11 South Florida', winner: null },
         { team1: '3 Nebraska', team2: '14 Wright St', winner: null },
-        { team1: '7 Saint Marys', team2: '10 NC State', winner: null },
+        { team1: '7 Saint Marys', team2: '10 Saint Louis', winner: null },
         { team1: '2 Houston', team2: '15 Furman', winner: null }
     ],
 
     west: [
         { team1: '1 Arizona', team2: '16 Long Island', winner: null },
-        { team1: '8 UCLA', team2: '9 Iowa', winner: null },
-        { team1: '5 Arkansas', team2: '12 Yale', winner: null },
-        { team1: '4 Virginia', team2: '13 McNeese', winner: null },
-        { team1: '6 Wisconsin', team2: '11 Texas', winner: null },
+        { team1: '8 UCLA', team2: '9 Texas A&M', winner: null },
+        { team1: '5 Vanderbilt', team2: '12 High Point', winner: null },
+        { team1: '4 Virginia', team2: '13 Hofstra', winner: null },
+        { team1: '6 BYU', team2: '11 Texas', winner: null },
         { team1: '3 Gonzaga', team2: '14 UC Irvine', winner: null },
-        { team1: '7 Kentucky', team2: '10 Saint Louis', winner: null },
-        { team1: '2 Illinois', team2: '15 Tennessee St', winner: null }
-    ],
-
-    east: [
-        { team1: '1 Duke', team2: '16 Siena', winner: null },
-        { team1: '8 Ohio State', team2: '9 Texas A&M', winner: null},
-        { team1: '5 Tennessee', team2: '12 Northern Iowa', winner: null },
-        { team1: '4 Kansas', team2: '13 Sam Houston', winner: null},
-        { team1: '6 North Carolina', team2: '11 Miami OH', winner: null },
-        { team1: '3 Alabama', team2: '14 Troy', winner: null },
         { team1: '7 Villanova', team2: '10 UCF', winner: null },
         { team1: '2 Michigan St', team2: '15 Queens', winner: null }
     ],
 
+    east: [
+        { team1: '1 Duke', team2: '16 Siena', winner: null },
+        { team1: '8 Miami', team2: '9 TCU', winner: null},
+        { team1: '5 Arkansas', team2: '12 Yale', winner: null },
+        { team1: '4 Purdue', team2: '13 Northern Iowa', winner: null},
+        { team1: '6 Louisville', team2: '11 Missouri', winner: null },
+        { team1: '3 Illinois', team2: '14 N Dakota St', winner: null },
+        { team1: '7 Kentucky', team2: '10 Santa Clara', winner: null },
+        { team1: '2 Iowa State', team2: '15 Tennessee St', winner: null }
+    ],
+
     midwest: [
         { team1: '1 Michigan', team2: '16 Idaho', winner: null },
-        { team1: '8 Utah State', team2: '9 Clemson', winner: null },
-        { team1: '5 Vanderbilt', team2: '12 High Point', winner: null },
-        { team1: '4 Texas Tech', team2: '13 Utah Valley', winner: null },
-        { team1: '6 Louisville', team2: '11 Missouri', winner: null },
-        { team1: '3 Iowa State', team2: '14 N Dakota St', winner: null },
-        { team1: '7 Georgia', team2: '10 Santa Clara', winner: null },
+        { team1: '8 Utah State', team2: '9 Iowa', winner: null },
+        { team1: '5 Tennessee', team2: '12 Akron', winner: null },
+        { team1: '4 Kansas', team2: '13 Sam Houston', winner: null },
+        { team1: '6 Wisconsin', team2: '11 Miami OH', winner: null },
+        { team1: '3 Alabama', team2: '14 Troy', winner: null },
+        { team1: '7 Georgia', team2: '10 NC State', winner: null },
         { team1: '2 UConn', team2: '15 UMBC', winner: null }
     ]
 };
