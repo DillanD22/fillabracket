@@ -1,5 +1,5 @@
 // CHANGE EVERY TIME YOU EDIT FIELD
-const BRACKET_VERSION = "5.0";
+const BRACKET_VERSION = "6.0";
 
 const savedVersion = localStorage.getItem('bracketVersion');
 if (savedVersion != BRACKET_VERSION) {
