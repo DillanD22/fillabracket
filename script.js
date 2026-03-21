@@ -1,5 +1,5 @@
 // CHANGE EVERY TIME YOU EDIT FIELD
-const BRACKET_VERSION = "6.0";
+const BRACKET_VERSION = "8.0";
 
 const savedVersion = localStorage.getItem('bracketVersion');
 if (savedVersion != BRACKET_VERSION) {
@@ -9,8 +9,19 @@ if (savedVersion != BRACKET_VERSION) {
 
 
 const bracket = {
+    east: [
+        { team1: '1 Duke', team2: '16 Siena', winner: null },
+        { team1: '8 Ohio State', team2: '9 TCU', winner: null},
+        { team1: '5 St Johns', team2: '12 Northern Iowa', winner: null },
+        { team1: '4 Kansas', team2: '13 CA Baptist', winner: null},
+        { team1: '6 Louisville', team2: '11 South Florida', winner: null },
+        { team1: '3 Michigan St', team2: '14 N Dakota St', winner: null },
+        { team1: '7 UCLA', team2: '10 UCF', winner: null },
+        { team1: '2 UConn', team2: '15 Furman', winner: null }
+    ],
+
     south: [
-        { team1: '1 Florida', team2: '16 Prairie View A&M/LeHigh', winner: null },
+        { team1: '1 Florida', team2: '16 Prairie View', winner: null },
         { team1: '8 Clemson', team2: '9 Iowa', winner: null},
         { team1: '5 Vanderbilt', team2: '12 McNeese', winner: null },
         { team1: '4 Nebraska', team2: '13 Troy', winner: null},
@@ -25,30 +36,19 @@ const bracket = {
         { team1: '8 Villanova', team2: '9 Utah State', winner: null },
         { team1: '5 Wisconsin', team2: '12 High Point', winner: null },
         { team1: '4 Arkansas', team2: '13 Hawaii', winner: null },
-        { team1: '6 BYU', team2: '11 Texas/NC State', winner: null },
+        { team1: '6 BYU', team2: '11 Texas', winner: null },
         { team1: '3 Gonzaga', team2: '14 Kennesaw St', winner: null },
         { team1: '7 Miami', team2: '10 Missouri', winner: null },
         { team1: '2 Purdue', team2: '15 Queens', winner: null }
     ],
 
-    east: [
-        { team1: '1 Duke', team2: '16 Siena', winner: null },
-        { team1: '8 Ohio State', team2: '9 TCU', winner: null},
-        { team1: '5 St Johns', team2: '12 Northern Iowa', winner: null },
-        { team1: '4 Kansas', team2: '13 Cal Baptist', winner: null},
-        { team1: '6 Louisville', team2: '11 South Florida', winner: null },
-        { team1: '3 Michigan St', team2: '14 N Dakota St', winner: null },
-        { team1: '7 UCLA', team2: '10 UCF', winner: null },
-        { team1: '2 UConn', team2: '15 Furman', winner: null }
-    ],
-
     midwest: [
-        { team1: '1 Michigan', team2: '16 UMBC/Howard', winner: null },
+        { team1: '1 Michigan', team2: '16 Howard', winner: null },
         { team1: '8 Georgia', team2: '9 Saint Louis', winner: null },
         { team1: '5 Texas Tech', team2: '12 Akron', winner: null },
         { team1: '4 Alabama', team2: '13 Hofstra', winner: null },
-        { team1: '6 Tennessee', team2: '11 SMU/Miami OH', winner: null },
-        { team1: '3 Virginia', team2: '14 Wrigh St', winner: null },
+        { team1: '6 Tennessee', team2: '11 Miami OH', winner: null },
+        { team1: '3 Virginia', team2: '14 Wright St', winner: null },
         { team1: '7 Kentucky', team2: '10 Santa Clara', winner: null },
         { team1: '2 Iowa St', team2: '15 Tennessee St', winner: null }
     ]
@@ -57,9 +57,9 @@ const bracket = {
 const defaultBracket = JSON.parse(JSON.stringify(bracket));
 
 const picks = {
+    east: { r2: [], r3: [], r4: [] },
     south: { r2: [], r3: [], r4: [] },
     west: { r2: [], r3: [], r4: [] },
-    east: { r2: [], r3: [], r4: [] },
     midwest: { r2: [], r3: [], r4: [] },
     finalFour: [],
     championship: []
@@ -136,8 +136,8 @@ function renderCenter() {
     const eastWinner = getRegionWinner('east');
     const midwestWinner = getRegionWinner('midwest');
 
-    const ff1 = { team1: southWinner || 'TBD', team2: westWinner || 'TBD', winner: picks.finalFour[0]?.winner || null };
-    const ff2 = { team1: eastWinner || 'TBD', team2: midwestWinner || 'TBD', winner: picks.finalFour[1]?.winner || null };
+    const ff1 = { team1: eastWinner || 'TBD', team2: southWinner || 'TBD', winner: picks.finalFour[0]?.winner || null };
+    const ff2 = { team1: westWinner || 'TBD', team2: midwestWinner || 'TBD', winner: picks.finalFour[1]?.winner || null };
 
     const champTeam1 = picks.finalFour[0]?.winner || 'TBD';
     const champTeam2 = picks.finalFour[1]?.winner || 'TBD';
@@ -246,9 +246,9 @@ function renderBracket() {
     center.innerHTML = "";
 
     const regionSides = {
+        east: leftSide,
         south: leftSide,
-        west: leftSide,
-        east: rightSide,
+        west: rightSide,
         midwest: rightSide
     };
 
@@ -263,7 +263,7 @@ function renderBracket() {
 
         const roundsContainer = document.createElement("div");
         roundsContainer.classList.add("rounds-container");
-        if (region === 'east' || region === 'midwest') {
+        if (region === 'west' || region === 'midwest') {
             roundsContainer.classList.add("right-side-rounds");
         }
 
